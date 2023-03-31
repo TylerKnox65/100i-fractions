@@ -4,10 +4,15 @@
 # numerator (integer) and denominator (integer)
 # return a tuple of 2 integers (numerator, denominator) for 
 # the fraction in lowest terms
+import math
 
 def lowestTerms(numerator,denominator):
 
-
+    gcd = math.gcd(numerator, denominator)
+    lowestnum = int(numerator / gcd)
+    lowestden = int(denominator / gcd)
+    lowestpair = (lowestnum, lowestden)
+    return lowestpair
 
 
 

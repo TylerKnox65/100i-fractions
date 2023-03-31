@@ -3,17 +3,27 @@
 # convert mixed numbers to improper fractions
 # convert improper fractions to mixed numbers of type a + b/c
 
+from math import floor
+
+
 def toImproper(a,b,c):
     # a : whole number
     # b : numerator
     # c : denominator
-    return
+    mult_num = a * c
+    new_n = mult_num + b 
+    frac = (new_n, c)
+    return frac
 
 def toMixed(num,den):
     #num: numerator
     #den: denominator
     # return a: whole number, b: numerator, c: denominator
-    return
+    n_divided = num / den
+    n_divided = floor(n_divided)
+    new_n = num - (n_divided * den)
+    frac = (n_divided, new_n, den)
+    return frac
 
 if __name__ == "__main__":
     assert toMixed(10,3) == (3,1,3)
